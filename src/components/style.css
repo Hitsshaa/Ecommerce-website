@@ -1,0 +1,97 @@
+.btn {
+    margin: 10px;
+}
+
+.card {
+    width: 50%;
+    margin: auto;
+    display: flex;
+    
+}
+.img {
+    width:150px;
+    height: 200px;
+}
+
+
+
+
+
+.marg2 {
+    margin: 50px;
+}
+
+.marg2{
+    width: 100%;
+}
+
+
+.pdetail{
+    display: flex;
+    width: 700px;
+    height: 500px;
+}
+
+
+.innerimg{
+    width: 350px;
+    height: 300px;
+}
+.inner2 {
+    width: 350px;
+    margin: 0px;
+}
+.card{
+    margin: 0px;
+    width:350px;
+    border:0px;
+}
+
+
+.MainContainer {
+    width:100%;
+    border: 2px solid black;
+    text-align: center;
+}
+
+.MidContainer {
+    display: flex   ;
+    justify-content: space-between;
+    width:100%;
+    border: 2px solid black;
+}
+
+.Category {
+    width:20%;
+    border: 2px solid black;
+}
+.MainBody {
+    
+    width: 80%;
+    color:brown;
+    background-color: yellow;
+    border: 2px solid black;
+    }
+
+    .headContainer {
+        margin:auto;
+
+    }
+
+    .UnorderList {
+        cursor: pointer;
+    }
+
+    .SearchButton{
+        margin: 20px;
+    }
+
+    .CartTable{
+        width:60%;
+        margin:auto
+
+    }
+
+    .Purchase {
+        float: right;
+    }
