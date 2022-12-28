@@ -1,3 +1,10 @@
+* {
+    margin: 0px;
+    padding: opx;
+    box-sizing: border-box;
+
+}
+
 .btn {
     margin: 10px;
 }
@@ -6,11 +13,13 @@
     width: 50%;
     margin: auto;
     display: flex;
-    
+
 }
+
 .img {
-    width:150px;
+    width: 150px;
     height: 200px;
+    margin: auto;
 }
 
 
@@ -19,79 +28,165 @@
 
 .marg2 {
     margin: 50px;
+    width: "18rem";
+
 }
 
-.marg2{
-    width: 100%;
+.card {
+    width: 18rem;
+    height: 23rem;
+    border-radius: 20px;
+    background-color: white;
+    padding: 20px;
+    /* --bs-card-border-width: none; */
+}
+
+.row {
+    margin: auto;
+    justify-content: center;
+    background-color: white;
+    --bs-gutter-x: 0;
+
 }
 
 
-.pdetail{
+
+
+.pdetail {
     display: flex;
-    width: 700px;
-    height: 500px;
+    justify-content: center;
+    width: 1200px;
+    margin: auto;
+    padding: 40px;
 }
 
+.cardimg {
+    width: 375px;
+    display: flex;
+}
 
-.innerimg{
+.innerimg {
     width: 350px;
     height: 300px;
 }
-.inner2 {
-    width: 350px;
-    margin: 0px;
+
+.Cardbody {
+    width: 300px;
 }
-.card{
+
+.inner2 {
+    background-color: pink;
     margin: 0px;
-    width:350px;
-    border:0px;
+
+}
+
+.card2 {
+    display: flex;
+    flex-direction: row;
+    margin: 0px;
+    width: 1000px;
+    border: 2px solid rgb(243, 230, 230);
+
 }
 
 
 .MainContainer {
-    width:100%;
-    border: 2px solid black;
+    width: 100%;
+    /* border: 2px solid black; */
     text-align: center;
 }
 
 .MidContainer {
-    display: flex   ;
+    display: flex;
     justify-content: space-between;
-    width:100%;
-    border: 2px solid black;
+    width: 100%;
+    /* border: 2px solid black; */
 }
 
 .Category {
-    width:20%;
-    border: 2px solid black;
+    padding-top: 40px;
+    width: 20%;
+    /* border: 2px solid black; */
+    background-color: white;
 }
+
 .MainBody {
-    
+
     width: 80%;
-    color:brown;
-    background-color: yellow;
-    border: 2px solid black;
-    }
+    justify-content: space-between;
+    display: flex;
+    flex-wrap: wrap;
+    background-color: white;
+    /* border: 2px solid black; */
 
-    .headContainer {
-        margin:auto;
+}
 
-    }
+.headContainer {
+    margin: auto;
 
-    .UnorderList {
-        cursor: pointer;
-    }
+}
 
-    .SearchButton{
-        margin: 20px;
-    }
+.UnorderList {
+    cursor: pointer;
+}
 
-    .CartTable{
-        width:60%;
-        margin:auto
+.SearchButton {
+    margin: 20px;
+}
 
-    }
+.CartTable {
+    width: 60%;
+    margin: auto
+}
 
-    .Purchase {
-        float: right;
-    }
+.Purchase {
+    float: right;
+}
+
+.Cartimg {
+    width: 100px;
+    height: 100px;
+}
+
+.Total_Amount {
+    color: #433c37;
+    font-size: x-large;
+
+}
+
+.card-body {
+    color: black;
+}
+
+.text {
+    color: black;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: larger;
+}
+
+.SearchBox {
+    float: right;
+    border-radius: 20px;
+    margin-right: 90px;
+    width: 300px;
+    height: 40px;
+}
+
+.header {
+    background-color: whitesmoke;
+}
+
+.Range {
+    margin-top: 200px;
+    color: black;
+}
+
+.RangeInput {
+    background-color: black;
+    color: black;
+}
+
+.bag {
+    float: right;
+}

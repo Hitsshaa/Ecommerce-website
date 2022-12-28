@@ -35,18 +35,20 @@ export default function ProductDetail() {
     <>
     {/* {console.log("hi",data)} */}
      <div className='pdetail'>
-     <div ><Card.Img className="innerimg" variant="top" src= {data.image}/></div>
-         <div className='inner2'><Card className='card'>
-       <Card.Body>
-       <Card.Text>{data.category}</Card.Text>
-         <Card.Title>{data.title}</Card.Title><br/>
+         
+         <Card className='card2'>
+        <div className="cardimg"> <Card.Img className="innerimg" variant="top" src= {data.image}/></div>
+         
+       <Card.Body className='Cardbody'>
+       <Card.Text><b>{data.category}</b></Card.Text>
+         <Card.Title>{(data.title)}</Card.Title><br/>
          <Card.Text>{data.description}</Card.Text>
-         <Card.Text>{data.price + " " + "$"}</Card.Text>
-         <Button variant="primary" size="sm">BUY</Button>
-         <Link type='button' to={`/Cart/${id}`} onClick = {()=>AddCart(data)}>ADD CART</Link>
+         <Card.Text><b>{data.price + " " + "$"}</b></Card.Text>
+         <Button variant="primary" >BUY</Button>
+         <Link type='button' to={`/Cart/${id}`} onClick = {()=>AddCart(data)}><Button variant="primary" >Add Cart</Button></Link>
        </Card.Body>
      </Card></div>
-     </div>
+    
      </>
   )
 }

@@ -1,17 +1,19 @@
 import React from 'react'
 import "./style.css";
+import Button from 'react-bootstrap/Button';
 
 
 const ProductHeader = ({SearchFun,getapi}) => {
   return (
    
     <>
+    
       <input
-        type="search"
-        placeholder="type for Search"
+        type="Search"
+        placeholder="Search"
         onChange={SearchFun}
       />
-      <button onClick={getapi} className="SearchButton">Reset</button>
+      <Button variant="primary"onClick={getapi} className="SearchButton">Reset</Button>
     </>
   )
 }

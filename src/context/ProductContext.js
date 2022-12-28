@@ -20,13 +20,46 @@ const getProduct = async (url) =>{
     dispatch({type:"API_ERROR"})
    }
 }
-
 useEffect(()=>{
     getProduct(api)
     console.log("productContext")
 },[])
 
-    return (<AppContext.Provider value={{...state}}>{children}</AppContext.Provider>);
+const SearchFun = (e) => {
+    console.log(e.target.value);
+    let value = e.target.value;
+    dispatch({type:"Search",payload:value})
+}
+
+const CategoricalProduct = (cate) => {
+    // console.log(cate);
+    // console.log(cate.target.value); 
+    console.log(cate.target.innerHTML);
+    let value = cate.target.innerHTML;
+    dispatch({type:"CategoricalProduct",payload:value})
+};
+
+const Rangefun = (ele) => {
+    // console.log(ele);
+    let value = ele.target.value;
+    // setPrice(value);
+    console.log(value);
+    dispatch({type:"Range",payload:value})
+    // console.log(
+    //   product.filter((ele) => {
+    //     return ele.price < price && ele.category == category;
+    //   })
+    // );
+    // setInfo(
+    //   product.filter((ele) => {
+    //     return ele.price <= price && ele.category == category;
+    //   })
+    // );
+}
+
+
+
+    return (<AppContext.Provider value={{...state,SearchFun,CategoricalProduct,Rangefun}}>{children}</AppContext.Provider>);
 };
  
  const useProductContext=() => {                //it is use as hooks in next component

@@ -34,5 +34,6 @@ export default function Index() {
         count:{count}
         <button onClick={increment}>+</button>
     </div>
+    
   )
 }

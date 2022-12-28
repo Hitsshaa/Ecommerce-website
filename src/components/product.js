@@ -9,7 +9,7 @@ const Product = () => {
   const [info, setInfo] = useState([]);
   const [category,setCategory] = useState("All");
 
-  let { product, Category,Title } = useProductContext();
+  let { product, Category,Title,CategoricalProduct,Rangefun} = useProductContext();
   console.log(product);
   let maxValue = Math.max(
     ...product.map((ele) => {
@@ -31,7 +31,7 @@ const Product = () => {
   useEffect(() => {
     getapi();
     console.log("i am useeffect");
-  }, []);
+  }, [product]);
 
   useEffect(() => {
     console.log("i am useeffect2");
@@ -41,84 +41,82 @@ const Product = () => {
     setCategory(category);
   },[category])
 
-  const CategoricalProduct = (cate) => {
-    console.log(cate);
-    console.log(cate.target.value); 
-    console.log(cate.target.innerHTML);
+  // const CategoricalProduct = (cate) => {
+  //   // console.log(cate);
+  //   // console.log(cate.target.value); 
+  //   console.log(cate.target.innerHTML);
 
-    // console.log(
-    //   product.filter((ele) => {
-    //     return ele.category === cate.target.innerHTML;
-    //   })
-    // );
-    setCategory(cate.target.innerHTML);
-    if (cate.target.innerHTML == "All") {
-      console.log("hi", setInfo(product));
-      setInfo(product);
-    } else {
-      setInfo(
-        product.filter((ele) => {
-          return ele.category === cate.target.innerHTML;
-        })
-      );
-    }
-  };
+  //   // console.log(
+  //   //   product.filter((ele) => {
+  //   //     return ele.category === cate.target.innerHTML;
+  //   //   })
+  //   // );
+  //   setCategory(cate.target.innerHTML);
+  //   if (cate.target.innerHTML == "All") {
+  //     console.log("hi", setInfo(product));
+  //     setInfo(product);
+  //   } else {
+  //     setInfo(
+  //       product.filter((ele) => {
+  //         return ele.category === cate.target.innerHTML;
+  //       })
+  //     );
+  //   }
+  // };
 
-  const Rangefun = (ele) => {
-    console.log(ele);
-    let value = ele.target.value;
-    setPrice(value);
-    console.log(value);
-    console.log(
-      product.filter((ele) => {
-        return ele.price < price && ele.category == category;
-      })
-    );
-    setInfo(
-      product.filter((ele) => {
-        return ele.price <= price && ele.category == category;
-      })
-    );
-  };
+  // const Rangefun = (ele) => {
+  //   console.log(ele);
+  //   let value = ele.target.value;
+  //   setPrice(value);
+  //   console.log(value);
+  //   console.log(
+  //     product.filter((ele) => {
+  //       return ele.price < price && ele.category == category;
+  //     })
+  //   );
+  //   setInfo(
+  //     product.filter((ele) => {
+  //       return ele.price <= price && ele.category == category;
+  //     })
+  //   );
 
-  const SearchFun = (e) => {
-    console.log(e.target.value);
-    let value = e.target.value;
-    let array = [];
-    let categoryList = Array.from(Category);
-    let TitleList = Array.from(Title)
-    console.log(categoryList);
-    var newValue = new RegExp(value, "i");
-    for (let i = 0; i < categoryList.length; i++) {
-      if (newValue.test(categoryList[i])) {
-        array.push(categoryList[i]);
-      }
-    }
-    for (let i = 0; i < TitleList.length; i++) {
-      if (newValue.test(TitleList[i])) {
-        array.push(TitleList[i]);
-      }
-    }
-    console.log(array);
+
+  // };
+
+  // const SearchFun = (e) => {
+  //   console.log(e.target.value);
+  //   let value = e.target.value;
+  //   let array = [];
+  //   let categoryList = Array.from(Category);
+  //   let TitleList = Array.from(Title)
+  //   console.log(categoryList);
+  //   var newValue = new RegExp(value, "i");
+  //   for (let i = 0; i < categoryList.length; i++) {
+  //     if (newValue.test(categoryList[i])) {
+  //       array.push(categoryList[i]);
+  //     }
+  //   }
+  //   for (let i = 0; i < TitleList.length; i++) {
+  //     if (newValue.test(TitleList[i])) {
+  //       array.push(TitleList[i]);
+  //     }
+  //   }
+  //   console.log(array);
     // console.log(
     //   product.filter((ele) => {
     //     return array.includes(ele.category) || array.includes(ele.title);
     //   })
     // );
-    setInfo(
-      product.filter((ele) => {
-        return array.includes(ele.category) || array.includes(ele.title);
-      })
-    );
-  };
+  //   setInfo(
+  //     product.filter((ele) => {
+  //       return array.includes(ele.category) || array.includes(ele.title);
+  //     })
+  //   );
+  // };
 
   return (
     <>
       <div className="MainContainer">
-
-        <div className="headContainer">
-          <ProductHeader SearchFun={SearchFun} getapi={getapi} />
-        </div>
 
         <div className="MidContainer">
 
@@ -131,7 +129,7 @@ const Product = () => {
           </div>
 
           <div className="MainBody">
-            <ProductMainBody info={info} />
+            <ProductMainBody info={info} setInfo={setInfo}/>
           </div>
 
         </div>
